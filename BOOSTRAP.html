@@ -10,19 +10,28 @@
 <body class="bg-light">
 
   <!-- Header Profil -->
-  <header class="bg-white border-bottom py-3">
+  <!-- TIDAK ADA PEMISAH STYLE DRY: terlalu bergantung pada class bootstrap langsung harus dipisahkan custom style-->
+  <header class="profile-header">     
     <div class="container">
       <div class="row align-items-center">
         <div class="col-3 col-md-2">
-          <img src="F1.jpeg" class="rounded-circle img-fluid border" alt="Foto Profil">
+        <!--ALT GAMBAR: kurang deskriptif diperbaiki lebih jelas dan fleksibel-->
+          <img src="F1.jpeg" class="rounded-circle img-fluid border" alt="Foto profil pengguna"> 
         </div>
         <div class="col-9 col-md-7">
-          <h2 class="h5 mb-1">shrfmld15</h2>
-          <p class="mb-1 text-muted small">UMKT | SAINTEK | TEKNIK INFORMATIKA</p>
-          <div class="d-flex gap-3">
-            <span><b>12</b> Post</span>
-            <span><b>700</b> Followers</span>
-            <span><b>10</b> Following</span>
+          <!--HARDCODED DATA: data yang ditulis langsung di html harus terpisah dari tampilan-->
+          <h2 class="h5 mb-1" id="username"></h2>               
+          <p class="mb-1 text-muted small" id="bio"></p>
+
+          <script>
+          document.getElementById("username").innerText = "shrfmld15";
+          document.getElementById("bio").innerText = "UMKT | SAINTEK | TEKNIK INFORMATIKA";
+          </script>
+          <!--DUPLIKASI STRUKTUR STATISTIK: lebih terstruktur dan siap dikembangkan dinamis-->
+          <div class="profile-stats">                           
+              <span><b id="post">12</b> Post</span>
+              <span><b id="followers">700</b> Followers</span>
+              <span><b id="following">10</b> Following</span>
           </div>
         </div>
         <div class="col-12 col-md-3 text-md-end mt-3 mt-md-0">
